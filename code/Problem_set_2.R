@@ -44,5 +44,4 @@ identification_sub=select(.data=identification_sub[1:length(identification_sub)]
 
 
 ##COMBINAR BASE DE DATOS 
-
-datos=bind_rows (identification_sub,location_sub, .DIRECTORIO="a" ) #
+datos=merge(location_sub,identification_sub, by=c("DIRECTORIO","SECUENCIA_P","SECUENCIA_ENCUESTA")) #
